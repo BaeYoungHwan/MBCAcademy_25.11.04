@@ -18,20 +18,19 @@ public class Assignment_1 {
 		System.out.println("=========================================");
 		System.out.println("\\  이름     나이   전화번호       주소	\\");
 		System.out.println("=========================================");
-		System.out.println("\\ \"홍길동\"   20   010-111-2222 \'경기도\'	\\");
-		System.out.println("\\ \"일지매\"   18   02-123-4567  \'서울\'	\\");
+		System.out.println("\\ \"홍길동\"   20   010-111-2222 '경기도'	\\");
+		System.out.println("\\ \"일지매\"   18   02-123-4567  '서울'	\\");
 		System.out.println("=========================================");
 		
 		//2025-11-05 첫번째 과제_03
-		String name;
+		String name, phone, address;
 		int age;
 		boolean gender;
-		String phone;
 		double height;
-		String address;
+
 		
 		System.out.println("===========================================================");
-		System.out.println("\\name\tage\t man\tpone\theight\taddress\t\\");
+		System.out.println("\\name\tage\t man\tphone\t\theight\taddress\t\\");
 		System.out.println("===========================================================");
 		name = "홍길동";
 		age = 20;
@@ -39,7 +38,7 @@ public class Assignment_1 {
 		phone = "010-111-2222";
 		height = 175.12;
 		address = "경기도";
-		System.out.printf("\\%s\t%d\t%b\t%s\t%.2f\t%s\t\\\n ", name, age, gender, phone, height, address);
+		System.out.printf("\\%s\t%d\t%b\t%s\t%.2f\t%s\t\\\n", name, age, gender, phone, height, address);
 		
 		name = "일지매";
 		age = 18;
@@ -47,7 +46,7 @@ public class Assignment_1 {
 		phone = "02-123-4567";
 		height = 180.01;
 		address = "서울";		
-		System.out.printf("\\%s\t%d\t%b\t%s\t%.2f\t%s\t\\\n ", name, age, gender, phone, height, address);
+		System.out.printf("\\%s\t%d\t%b\t%s\t%.2f\t%s\t\\\n", name, age, gender, phone, height, address);
 		
 		name = "장옥정";
 		age = 14;
@@ -73,7 +72,6 @@ public class Assignment_1 {
 		
 		System.out.printf("x의 값은 : %d\n", x );
 		System.out.printf("y의 값은 : %d", y);
-		//System.in.
 		
 		
 		
