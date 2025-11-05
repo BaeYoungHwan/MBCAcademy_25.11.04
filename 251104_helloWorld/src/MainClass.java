@@ -5,7 +5,15 @@ public class MainClass {
 		
 		System.out.print("hello world'");
 		
-
+		int I;
+		char cc;
+		boolean a;
+		boolean b;
+		a = false;
+		b = true;
+  		System.out.print(a);
+  		
+  		
 	} 
 
 }
@@ -16,6 +24,9 @@ public class MainClass {
 // Eclipse install
 // https://www.eclipse.org/downloads/packages/
 
+
+
+
 /*	
 	\n 줄바꾸기
 	\b 백스페이스
@@ -23,3 +34,7 @@ public class MainClass {
 	\\ "\" 출력하기
 	\"   " " " 출력하기
 */
+
+
+	
+	
