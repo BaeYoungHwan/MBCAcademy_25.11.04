@@ -45,15 +45,19 @@ public class MainClass {
 //  		System.out.println("String:" + str);
   		
 		// Buffer : 저장공간
-  		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-  		String address;
-  		System.out.print("주소 = ");
-  		address =  br.readLine();
-  		System.out.println("주소 : " + address);
-  		sc.close();
+//  		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//  		String address;
+//  		System.out.print("주소 = ");
+//  		address =  br.readLine();
+//  		System.out.println("주소 : " + address);
+//  		sc.close();
+//  		
+//  		byte by = 122;
+//  		
   		
-  		byte by = 122;
+  		System.out.println(Math.random() * 10);
   		
+  			
 	} 
 
 }
