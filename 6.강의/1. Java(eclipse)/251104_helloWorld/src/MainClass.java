@@ -18,7 +18,12 @@ public class MainClass {
 		a = false;
 		b = true;
   		
-		
+		i = 0
+		for(int in = 0; in < 1000, in++) {
+			
+			i = in + i
+			
+		}
 		// 입력함수 Scanner
 		Scanner sc = new Scanner(System.in);
   		
@@ -55,7 +60,7 @@ public class MainClass {
 //  		byte by = 122;
 //  		
   		
-  		System.out.println(Math.random() * 10);
+//  		System.out.println(Math.random() * 10);
   		
   			
 	} 
