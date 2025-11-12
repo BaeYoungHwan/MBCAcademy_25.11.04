@@ -1,0 +1,46 @@
+TeamProject Rule
+
+
+
+1. GitHub 사용할경우 포트 받고 스타 누르기.
+GitHub_Issue tab을 사용하여 자신이 모르는 부분올리기. 각 팀원은 Issue탭을 확인하여 아는부분 혹은 모르는부분이여도 올려놓고 같이 고민하기.
+GitHub_Project tab을 활용하여 각자 ToDoList 확인 및 업데이트
+Wiki tab도 활용하여 확인
+
+2. 각 함수를 쓸때는 주석을 사용하여 어떤 내용인지 알려주기.
+
+3. 
+
+4. 변수선언
+https://wikidocs.net/267749
+
+클래스는 파스텔기법 사용(약어 사용 비권장)
+Ex) CustomerManager PublicIssue
+
+변수는 카멜기법 사용
+Ex) getListItem writeMemo updateUserData
+
+함수는 스네이크기법 사용
+Ex) calculate_sum add_number get_user_info
+get_		데이터 가져오기 			get_user_info()
+set_		값을 설정하는 함수			set_password()
+update_	데이터를 업데이트 하는 함수	update_profile()
+delete_	데이터를 삭제하는 함수		delete_post()
+
+
+
+
+
+
+
+ㅇ 필요 문서
+
+DB_ERD
+WBS(일정관리표)
+기능정의서 및 설계서
+
+
+
+
+
+
