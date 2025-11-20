@@ -22,11 +22,11 @@ public class Assignment12 {
 			int roll;
 			
 			//얼마를 배팅하시겠습니까?
-			System.out.print("얼마를 배팅하시겠습니까? :");
+			System.out.print("얼마를 배팅하시겠습니까?");
 			betCoin = sc.nextInt();
 			
 			//어디에 배팅하시겠습니까? 
-			System.out.print("어디에 배팅하시겠습니까?  :");
+			System.out.print("어디에 배팅하시겠습니까?");
 			matchSum = sc.nextInt();
 			dg.ownCoin = dg.ownCoin - betCoin;
 			
