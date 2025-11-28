@@ -9,12 +9,13 @@ import java.util.Scanner;
 
 import dto.AddressDto;
 import file.FileProc;
+import single.Singleton;
 
 public class AddressDaoImpl implements AddressDao {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	private List<AddressDto> list;
+	//private List<AddressDto> list;
 	private FileProc fp;
 	
 	public AddressDaoImpl() {
@@ -58,8 +59,10 @@ public class AddressDaoImpl implements AddressDao {
 			e.printStackTrace();
 		}	
 		
-		AddressDto dto = new AddressDto(name, age, phone, address, memo);		
-		list.add(dto);		
+		AddressDto dto = new AddressDto(name, age, phone, address, memo);
+		
+		Singleton s = Singleton.getInstance();
+		s.list.add(dto);		
 		
 		System.out.println("주소록에 추가되었습니다");		
 	}
@@ -78,7 +81,8 @@ public class AddressDaoImpl implements AddressDao {
 		}	
 		
 		// 삭제
-		list.remove(dto);		
+		Singleton s = Singleton.getInstance();
+		s.list.remove(dto);		
 		System.out.println("정상적으로 삭제되었습니다");				
 	}
 
@@ -97,7 +101,8 @@ public class AddressDaoImpl implements AddressDao {
 		
 		// 찾은 데이터를 추가할 list
 		List<AddressDto> findList = new ArrayList<AddressDto>();
-		for (AddressDto dto : list) {
+		Singleton s = Singleton.getInstance();
+		for (AddressDto dto : s.list) {
 			if(dto.getMemo().contains(memo)) { // memo안에 문자열을 포함하고 있는 경우
 				findList.add(dto);
 			}
@@ -136,8 +141,9 @@ public class AddressDaoImpl implements AddressDao {
 	}
 	
 	public AddressDto search(String name) {
-		AddressDto dto = null;		
-		for (AddressDto address : list) {
+		AddressDto dto = null;	
+		Singleton s = Singleton.getInstance();
+		for (AddressDto address : s.list) {
 			if(name.equals(address.getName())) {
 				dto = address;
 				break;
@@ -148,7 +154,8 @@ public class AddressDaoImpl implements AddressDao {
 		
 	@Override
 	public void all() {		
-		for (AddressDto dto : list) {
+		Singleton s = Singleton.getInstance();
+		for (AddressDto dto : s.list) {
 			System.out.println(dto.toString());
 		}			
 	}
@@ -156,11 +163,11 @@ public class AddressDaoImpl implements AddressDao {
 	// Data save/load
 	@Override
 	public void save() {		
-		fp.fileSave(list);
+		fp.fileSave();
 	}
 	@Override
 	public void load() {		
-		list = fp.fileLoad();
+		fp.fileLoad();
 	}
 	
 }

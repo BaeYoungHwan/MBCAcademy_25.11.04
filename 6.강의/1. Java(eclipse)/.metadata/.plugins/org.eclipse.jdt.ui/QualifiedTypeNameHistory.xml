@@ -6,4 +6,11 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="Dice.DiceRand"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="dto.AccountDTO"/>
+    <fullyQualifiedTypeName name="file.FileProc"/>
+    <fullyQualifiedTypeName name="dao.AccountDAO"/>
+    <fullyQualifiedTypeName name="dao.AccountDAOImpl"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalAccessError"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

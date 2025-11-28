@@ -12,13 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dto.AddressDto;
+import single.Singleton;
 
 public class FileProc {
 
 	private File file;
 	
 	public FileProc(String filename) {
-		file = new File("C:\\Users\\User\\Documents\\MBCAcademy_25.11.04\\6.강의\\1. Java(eclipse)\\251127 AddressBook\\AddressBook" + filename + ".txt");
+		file = new File("c:/tmp/" + filename + ".txt");
 		createNewFile();
 	}
 	
@@ -36,12 +37,13 @@ public class FileProc {
 	}
 	
 	// data save/load
-	public void fileSave(List<AddressDto> list) {
+	public void fileSave() {
 		
 		try {
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)));
 		
-			for (AddressDto dto : list) {
+			Singleton s = Singleton.getInstance();
+			for (AddressDto dto : s.list) {
 				pw.println(dto.getData());
 			}
 			pw.close();
@@ -53,12 +55,12 @@ public class FileProc {
 		System.out.println("저장완료했습니다");
 	}
 	
-	public List<AddressDto> fileLoad() {		
-		List<AddressDto> list = new ArrayList<AddressDto>();
+	public void fileLoad() {		
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			
-			String str = "";			
+			String str = "";	
+			Singleton s = Singleton.getInstance();
 			while((str = br.readLine()) != null) {
 				// 문자열을 자르고 list에 삽입
 				String data[] = str.split("-");
@@ -67,7 +69,7 @@ public class FileProc {
 												data[2], 
 												data[3], 
 												data[4]);
-				list.add(dto);
+				s.list.add(dto);
 			}
 			br.close();			
 		} catch (FileNotFoundException e) {			
@@ -75,8 +77,6 @@ public class FileProc {
 		} catch (IOException e) {			
 			e.printStackTrace();
 		}
-
-		return list;
 	}	
 }
 
