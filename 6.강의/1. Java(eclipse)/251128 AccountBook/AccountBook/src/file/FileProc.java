@@ -19,7 +19,7 @@ public class FileProc {
 	private File file;
 	
 	public FileProc(String filename) {
-		file = new File("C:\\Users\\User\\Documents\\MBCAcademy_25.11.04\\6.강의\\1. Java(eclipse)\\251128 AccountBook" + filename + ".txt");
+		file = new File("C:\\Users\\User\\Documents\\MBCAcademy_25.11.04\\6.강의\\1. Java(eclipse)\\251128 AccountBook\\AccountBook" + filename + ".txt");
 		createNewFile();
 	}
 	
