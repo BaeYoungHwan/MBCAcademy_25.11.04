@@ -1,7 +1,7 @@
 Select * from employees; --모든 테이블 표출
 
 -- 원하는 컬럼명만 표출
-Select employee_id, first_name, salary
+Select *
 from employees;
 
 -- 컬럼의 별명 (alias) 대소문자 및 생략가능 (붙이는걸 권장)

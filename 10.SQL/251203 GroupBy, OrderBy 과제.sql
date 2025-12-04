@@ -26,32 +26,31 @@ order by department_id, job_id, salary desc;
 
 -- 그룹핑
 -- 문제1) EMPLOYEES 테이블에서 모든 SALESMAN(SA_)에 대하여 급여의 평균, 최고액, 최저액, 합계를 구하여 출력하여라.
-select job_id, avg(salary), max(salary), min(salary), sum(salary)
+select avg(salary), max(salary), min(salary), sum(salary)
 from employees
-group by job_id 
-having job_id like 'SA%';
+where job_id like 'SA%';
+--group by job_id 
+--having job_id like 'SA%';
 
 -- 문제2) EMPLOYEES 테이블에 등록되어 있는 인원수, 보너스가 NULL이 아닌 인원수, 보너스의 평균, 등록되어 있는 부서의 수를 구하여 출력하라.
-select  count(employees), count(commission_pct),avg(commission_pct), count(DISTINCT department_id)
+select  count(employees), count(commission_pct),round(avg(commission_pct *salary)), count(DISTINCT department_id)
 from employees
 
-select  commission_pct
-from employees
-where commission_pct is not null;
 
 -- 문제3) EMPLOYEES 테이블에서 부서별로 인원수, 평균 급여, 최저급여, 최고 급여, 급여의 합을 구하여 출력하라.
-select count(employee_id), avg(salary), min(salary), max(salary), sum(salary)
+select count(employee_id), trunc(avg(salary)) as avg, min(salary), max(salary), sum(salary)
 from employees
 group by department_id;
 
 -- 문제4) EMPLOYEES 테이블에서 각 부서별로 인원수,급여의 평균, 최저 급여, 최고 급여, 급여의 합을 구하여 급여의 합이 많은 순으로 출력하여라.
-select count(employee_id), avg(salary), min(salary), max(salary), sum(salary)
+select count(employee_id), trunc(avg(salary)) as avg, min(salary), max(salary), sum(salary)
 from employees
+where department_id is not null
 group by department_id
 order by sum(salary) desc;
 
 -- 문제5) EMPLOYEES 테이블에서 부서별, 업무별 그룹하여 결과를 부서번호, 업무, 인원수, 급여의 평균, 급여의 합을 구하여 출력하여라.
-select department_id, job_id, count(employee_id), avg(salary), sum(salary)
+select department_id, job_id, count(employee_id), trunc(avg(salary)) as avg, sum(salary)
 from employees
 group by department_id, job_id;
 
@@ -64,7 +63,7 @@ having count(employee_id) >= 4;
 
 
 -- 문제7) EMPLOYEES 테이블에서 급여가 최대 10000이상인 부서에 대해서 부서번호, 평균 급여, 급여의 합을 구하여 출력하여라.
-select department_id, avg(salary), sum(salary)
+select department_id,round(avg(salary)) as avg , sum(salary)
 from employees
 group by department_id
 having sum(salary) >= 10000;
