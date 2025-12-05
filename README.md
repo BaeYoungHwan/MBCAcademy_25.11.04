@@ -8,8 +8,8 @@ https://blog.naver.com/uee8351773
 
 
 
-<img src="8.사진//curriculum.png">
+<img src="08.사진//curriculum.png">
 
-<img src="8.사진//curriculum_info.png">
+<img src="08.사진//curriculum_info.png">
 
-<img src="8.사진//company.png">
+<img src="08.사진//company.png">
