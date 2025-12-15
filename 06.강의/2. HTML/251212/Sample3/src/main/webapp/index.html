@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+	resource(자원): button, input, slider, calendar...
+ -->
+
+<!-- link : 목적 -> move(이동)  A.html -> B.html -->  
+<a href="http://zum.com">zum으로 이동</a>
+<br/><br/>
+
+<a href="default.html">default.html로 이동</a>
+<br/><br/>
+
+<!-- 
+	form : tag. link의 목적의 태그
+		   (입력된)값을 전달	
+		   
+	값을 전달 시에 attribute 를 이용
+	id: Javascript 에서 접근하기 위한 속성. 현재의 html문서에 하나만을 인식
+	class: CSS에서 접근할 목적. Javascript 에서 접근이 가능. 다수를 설정
+	name: (link시)값을 전달할 목적. Javascript 에서 접근이 가능. 다수를 설정
+-->
+
+<form action="default.jsp">
+
+아이디:<input type="text" name="userid" placeholder="아이디입력"/><br/>
+패스워드:<input type="text" name="password" placeholder="패스워드입력"/><br/>
+
+<input type="submit" value="이동"/>
+
+</form>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- table: row(행), column(열:항목) -->
+	<div align="center">
+	<table border="1">
+		<col width="50" />
+		<col width="100" />
+		<col width="70" />
+		<col width="100" />
+
+		<caption>학생명단</caption>
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>신장</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<th>1</th>
+				<td>홍길동</td>
+				<td>24</td>
+				<td>172.1</td>
+			</tr>
+			<tr>
+				<th>2</th>
+				<td>성춘향</td>
+				<td>16</td>
+				<td>156.7</td>
+			</tr>
+			<tr>
+				<th>3</th>
+				<td>일지매</td>
+				<td>22</td>
+				<td>180.3</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	
+	<br/><br/>
+
+<!-- column 을 합한다 -->
+<table border="1" style="width: 50%">
+<tr>
+	<th>이름</th><th>나이</th><th>신장</th><th colspan="2">전화번호</th><!-- <th>전화번호</th> -->
+</tr>
+<tr>
+	<td>홍길동</td><td>24</td><td>172.3</td><td>123-4567</td><td>123-5678</td>
+</tr>
+</table>
+
+<br/><br/>
+
+<!-- row 를 합한다 -->	
+<table border="1">
+<tr>
+	<th>번호</th>
+	<td>1</td>
+</tr>
+<tr>
+	<th>이름</th>
+	<td>홍길동</td>
+</tr>
+<tr>
+	<th rowspan="2">전화번호</th>
+	<td>123-4567</td>
+</tr>
+<tr>
+	<!-- <th>전화번호</th>  -->
+	<td>123-4589</td>
+</tr>
+
+</table>
+
+	
+
+</body>
+</html>
+
+
+
+
+
+
