@@ -101,9 +101,9 @@ public class MemberDao {
 			
 			return count;
 		}
-		public int idmatch(String id, String pw) {
+		public MemberDto login(String id, String pw) {
 			
-			String sql = " 	select count(*) "
+			String sql = " 	select id, name, email, auth "
 					+ "		from member "
 					+ "		where id = ? and pw = ?";
 			
@@ -111,7 +111,8 @@ public class MemberDao {
 			PreparedStatement psmt = null;
 			ResultSet rs = null;
 			
-			int count = 0;
+			MemberDto dto = null;
+			
 			
 			try {
 				conn = DBConnection.getConnection();
@@ -124,7 +125,12 @@ public class MemberDao {
 				
 				rs = psmt.executeQuery();
 				if(rs.next()) {
-					count = rs.getInt(1);
+					String _id = rs.getString("id");
+					String _name = rs.getString("name");
+					String _email = rs.getString("email");
+					int _auth = rs.getInt("auth");
+					
+					dto = new MemberDto(_id, "", _name, _email, _auth);
 				}		
 				System.out.println("idcheck 3/3 success");
 				
@@ -135,7 +141,7 @@ public class MemberDao {
 				DBClose.close(psmt, conn, rs);
 			}
 					
-			return count;
+			return dto;
 		}
 			
 }

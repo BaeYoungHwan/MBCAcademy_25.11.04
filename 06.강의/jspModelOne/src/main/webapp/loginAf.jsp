@@ -11,23 +11,26 @@
 	//String email = request.getParameter("email");
 	//System.out.println("name: " + name);
 	
-	MemberDao  dao = MemberDao.getInstance();
+	MemberDao dao = MemberDao.getInstance();
 	
-	int count = dao.idmatch(id, pw);
-	
-	if(count > 0){
-%>
-	<script type="text/javascript">
-	alert("반갑습니다 고객님")
-	location.href="login.jsp";
-	</script>
-<%
+	MemberDto mem = dao.login(id, pw);
+
+	if(mem != null){
+		// login한 사용자 정보 저장
+		session.setAttribute("login", mem);
+		// session.setMaxInactiveInterval(60 * 60 * 2);
+		%>
+		<script type="text/javascript">
+		alert("<%=mem.getName() %>님 환영합니다");
+		location.href="login.jsp";
+		</script>
+		<%
 	}else{
-%>
-	<script type="text/javascript">
-	alert("다시 확인해 주십시오.")
-	location.href="login.jsp";
-	</script>
-<%
-	}	
-%>
+		%>
+		<script type="text/javascript">
+		alert("아이디나 패스워드를 확인하십시오");
+		location.href = "login.jsp";
+		</script>
+		<%
+	}
+	%>
