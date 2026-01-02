@@ -75,12 +75,7 @@ $("#chk_save_id").click(function () {
 		
 	}
 })
-
-
 </script>
-
-
-
 </div>
 </body>
 </html>

@@ -68,7 +68,30 @@ $(document).ready(function () {
 	
 	$("#id_chk_btn").click(function () {
 		
+		// 빈칸 검사 필요
 		// ajax		idcheck.jsp
+		$.ajax({
+			url:"idcheck.jsp",
+			type:"post",
+			data:{ "id" : $("#id").val()},
+			success:function(msg){
+				//alert("success")
+				//alert(msg.trim())
+				if(msg.trim() == "Yes"){
+					$("#idcheck").css("color","#00f")
+					$("#idcheck").text("아이디를 사용 할 수 있습니다.")
+				}else{
+					$("#idcheck").css("color","#f00")
+					$("#idcheck").text("아이디를 사용 할 수 없습니다.")
+					$("#id").val("");
+				}
+			},
+			error:function(){
+				alert("fail")
+			}
+			
+			
+		});
 		
 	});	
 	
