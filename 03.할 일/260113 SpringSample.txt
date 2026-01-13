@@ -1,0 +1,42 @@
+26 01 13 오늘의 할일.
+
+Q. login.do 로 이동하는데 log.do 파일이 없는데 do 파일이 어떤 역할을 하는지
+>> GetMapping("*.do")를 활용하여 data를 받고 return 해주는 역할인가?
+>> Controller 에서 사용하는건가? 확실히 공부필요
+>> SpringFramwork에서 제공해주는 기능. SpringFramework 복습필요
+
+각종 설정 Servlet 및 톰캣 설정에 관하여 모름
+>> 블로그 정리 필요
+
+Q. github로 DB관리를 하게 되면 현재 localDB를 사용하고 있는데 어떤식으로 협업을 하는지 궁금
+데이터를 손수 맞춰야 하는건지
+>> 주소의 IP를 변경하여 공통의 DB를 만들어서 진행(주로 발표자 DB)
+>> 각자 DB 생성하여 필드만 맞춰주고 데이터는 별도관리(Create, Insert, Drop, Delete 등) SQL문 공유
+
+
+ㅇ팀프로젝트
+GPT 사용해도 된다 하지만 코드의 이해가 필요.
+기본 템플릿은 강사님의 코드를 기반으로 제작.
+모르는게 있으면 물어보기 하지만 충분히 고민한 후 질문 필요.
+
+
+프론트엔드의 유명 인사들 react, vue, ajax(Front) //  Node.js, redis (Backend) //  msa들이 뭔지가 궁금.
+
+
+Q. 현재 구축되어 있는 스택이 Spring framework로 웹사이트를 만든다?.
+>> 데이터의 의존성 // 데이터가 자유롭게 왔다갔다함.
+
+Q. Dao, Service, Controller 는 어떤 기준으로 나누게 되는가?
+>> 사용자의 편리성을 위해서 구분해 놓은것
+>> 따로따로 관리해도 상관이 없음.
+
+A. Mybatis는 원래 dao에 따로따로 SQL을 관리 했는데 통합관리를 하는 유용한 기능
+
+
+
+
+
+
+
+
+
