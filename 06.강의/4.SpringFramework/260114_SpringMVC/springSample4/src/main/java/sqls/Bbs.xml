@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="Bbs">
+
+<select id="bbslist" parameterType="com.mbc.pro.dto.Bbsparam" 
+						resultType="com.mbc.pro.dto.BbsDto">
+	select seq, id, ref, step, depth,
+			title, content, wdate, parent, del, readcount
+	from bbs
+	<if test="category != null and category != '' and keyword != null and keyword != ''">
+		<if test="category == 'title'">
+			where title like concat('%', #{keyword}, '%')
+		</if>
+		<if test="category == 'content'">
+			where content like concat('%', #{keyword}, '%')
+		</if>
+		<if test="category == 'writer'">
+			where id=#{keyword}
+		</if>
+	</if>
+	order by ref desc, step asc
+	limit 10 offset ${(pageNumber * 10)}
+</select>
+
+<!-- 글의 총수 -->
+<select id="getAllBbs" parameterType="com.mbc.pro.dto.Bbsparam" resultType="Integer">
+	select count(*)
+	from bbs
+	<if test="category != null and category != '' and keyword != null and keyword != ''">
+		<if test="category == 'title'">
+			where title like concat('%', #{keyword}, '%')
+		</if>
+		<if test="category == 'content'">
+			where content like concat('%', #{keyword}, '%')
+		</if>
+		<if test="category == 'writer'">
+			where id=#{keyword}
+		</if>
+	</if>
+</select>
+
+<insert id="bbswrite" parameterType="com.mbc.pro.dto.BbsDto">
+	insert into bbs(id, ref, step, depth, title, content, wdate, parent, del, readcount)
+	values(#{id}, (select coalesce(max(ref), 0) + 1 from bbs), 0, 0, 
+				#{title}, #{content}, now(), 0, 0, 0)
+</insert>
+
+<select id="getBbs" parameterType="Integer" resultType="com.mbc.pro.dto.BbsDto">
+	select seq, id, ref, step, depth, title, content, wdate, parent, del, readcount
+	from bbs
+	where seq=#{seq}
+</select>
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
