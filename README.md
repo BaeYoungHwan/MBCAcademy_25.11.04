@@ -6,7 +6,7 @@ MBCAcademy에서 공부했던것을 복습하고 에스트레인에 취업을 �
 공부 정리한 블로그
 https://blog.naver.com/uee8351773
 
-
+12
 
 <img src="08.사진//curriculum.png">
 
