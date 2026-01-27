@@ -1,0 +1,90 @@
+260123 오늘의 할 일 
+
+
+ㅇ 장애발생 DB 만들기
+
+ㅇ PW/E-mail 글자수 늘리기.
+
+ㅇ Github 이름 변경 및 파일 삭제후 다시 클론
+
+PullRequest 개인이 승낙하지 않기.
+
+ㅇ 사용자가 맡은 역은 하나의 호선과 하나의 역을 맡고 있음.
+
+
+
+error_id  error_title  error_stat error_
+
+ID		PK serial
+제목 		not null
+호선	
+역명
+작성자 id 	FK Notnull user_id
+작성자 이름	not null
+내용
+상태 ( 1 오픈 , 2 해결중 , 3 완료 , 4 비활성화 ) not null
+댓글?
+등록일자	notnull  now()-default
+완료일자	
+
+역명별로 상태가 오픈/해결중 에러id를 count 하고 뿌려줌
+
+
+parent(부모글 번호) ref(그룹번호) step(행번호) depth(깊이번호) 의 필요성을 모르겠음
+그런데 다른 Table DB에서는 다 사용하고 있음.. 댓글쪽인거 같긴 한데 
+
+
+
+
+comment_id (BIGINT, PK, Auto Increment): 댓글 고유 번호
+board_id (BIGINT, FK, Not Null): 게시글 번호 (어느 글에 달린 댓글인가)
+parent_id (BIGINT, Nullable): 부모 댓글 ID (대댓글 구현 시, 셀프 참조)
+writer_id (BIGINT, FK, Not Null): 작성자 ID (회원 테이블 참조)
+content (VARCHAR, Not Null): 댓글 내용
+created_at (TIMESTAMP): 작성 일자
+updated_at (TIMESTAMP): 수정 일자 
+
+
+
+
+create table bbscomment(
+   seq SERIAL primary key, -- 자동 생성
+   bbs_seq int not null, -- 어떤 게시글의 댓글인지 알기 위함
+   id varchar(50) not null,
+   content varchar(1000) not null,
+   wdate timestamp default now()
+);
+
+alter table bbscomment
+add foreign key(id) references member(id);
+
+alter table bbscomment
+add foreign key(bbs_seq) references bbs(seq);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
