@@ -6,3 +6,31 @@
 URL Naming rule
 
 api 
+
+
+대쉬보드
+
+
+로그인(/user)        
+- 로그인(/user)
+- 회원가입(/user/regi)
+- ID check (/user/check)
+
+대시보드(/main)
+
+마이페이지(/user/my)
+-수정 변경(/user/my/edit)
+
+역별현황(/main/detail)
+
+통계 분석(/Report)
+
+장애/이슈(/main/insident)
+-글쓰기(/main/insident/create)
+-세부내용(/main/insident/detail)
+-수정(/main/insident/detail/edit)
+
+사용자관리(user/manage)
+- 마스터 승인(set_user_approval)
+
+
