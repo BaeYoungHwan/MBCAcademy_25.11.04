@@ -1,0 +1,17 @@
+2026 - 03 - 12
+오늘의 할 일
+
+주간보고
+- CCTV 실시간 데이터 받을 수 있는지 여쭤보기.
+- 프로젝트 명 정하기.
+- CCTV, 신호 제어기, 신호등 설비 데이터 
+- ㅇ대본 작성하기.
+
+ㅇ FastAPI 개발
+
+CCTV 구역 정하기.
+
+ffmpeg -re -stream_loop -1 -i "C:\Users\User\Documents\STrafficFinalProject\AIpassFastAPI\data\videos\intersection_test_01.mp4" -c copy -f rtsp rtsp://localhost:8554/mystream.
+
+
+uvicorn main:app --reload
